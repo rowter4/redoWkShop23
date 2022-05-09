@@ -58,4 +58,10 @@ public class BffRepository {
                 , bff.getPhone(), bff.getStatus(), bff.getPassphrase(), bff.getDob());
         return 1 == count;
     }
+
+    // this segment is for the tests. There is a need to remove whatever that is inserted inside the database for testing.
+    public boolean deleteBffByEmail(String email) {
+        int count = template.update(SQL_DELETE_BFF_BY_EMAIL, email);
+        return 1 == count;
+    }
 }
